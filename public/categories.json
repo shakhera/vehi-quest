@@ -1,0 +1,162 @@
+[
+ 
+
+  
+      {
+        "id": 1,
+        "name": "Sedans",
+        "img": "https://img.freepik.com/free-vector/blue-sedan-car-isolated-white-vector_53876-67352.jpg?t=st=1718567156~exp=1718570756~hmac=3000815597ee0c033837e3f39808fab50829fd313779af00e915586b770dc7c7&w=740",
+        "products": [
+          {
+            "id": 1,
+            "name": "Toyota Camry",
+            "img": "https://images.unsplash.com/photo-1588919832069-24d6d344c299?q=80&w=1080&fit=max",
+            "price": "$15,000",
+            "location": "Los Angeles",
+            "originalPrice": "$30,000",
+            "yearsOfUse": 3,
+            "postedTime": "2 days ago",
+            "sellerName": "John Doe",
+            "verified": true
+          },
+          {
+            "id": 2,
+            "name": "Honda Accord",
+            "img": "https://images.unsplash.com/photo-1610832996153-020ba6a78e36?q=80&w=1080&fit=max",
+            "price": "$12,500",
+            "location": "New York",
+            "originalPrice": "$28,000",
+            "yearsOfUse": 4,
+            "postedTime": "1 day ago",
+            "sellerName": "Jane Smith",
+            "verified": false
+          }
+        ]
+      },
+      {
+        "id": 2,
+        "name": "SUVs",
+        "img": "https://img.freepik.com/free-photo/white-offroader-jeep-parking_114579-4007.jpg?t=st=1718567237~exp=1718570837~hmac=9f9f6fd0edb44bf5d0a2c0394207b4d05089f084badca597ee3ec07f4a00d05b&w=740",
+        "products": [
+          {
+            "id": 3,
+            "name": "Ford Explorer",
+            "img": "https://images.unsplash.com/photo-1549490314-0696c8e6b7d9?q=80&w=1080&fit=max",
+            "price": "$20,000",
+            "location": "Chicago",
+            "originalPrice": "$35,000",
+            "yearsOfUse": 2,
+            "postedTime": "3 days ago",
+            "sellerName": "Michael Johnson",
+            "verified": true
+          },
+          {
+            "id": 4,
+            "name": "Jeep Grand Cherokee",
+            "img": "https://images.unsplash.com/photo-1597842078173-79e3b6b7d5c2?q=80&w=1080&fit=max",
+            "price": "$18,500",
+            "location": "Houston",
+            "originalPrice": "$32,000",
+            "yearsOfUse": 3,
+            "postedTime": "5 days ago",
+            "sellerName": "Emily Brown",
+            "verified": false
+          }
+        ]
+      },
+      {
+        "id": 3,
+        "name": "Trucks",
+        "img": "https://images.unsplash.com/photo-1601584115197-04ecc0da31d7?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "products": [
+          {
+            "id": 5,
+            "name": "Chevrolet Silverado",
+            "img": "https://images.unsplash.com/photo-1567114677180-5fbdbe4b4644?q=80&w=1080&fit=max",
+            "price": "$25,000",
+            "location": "Dallas",
+            "originalPrice": "$40,000",
+            "yearsOfUse": 1,
+            "postedTime": "4 days ago",
+            "sellerName": "David Wilson",
+            "verified": true
+          },
+          {
+            "id": 6,
+            "name": "Ford F-150",
+            "img": "https://images.unsplash.com/photo-1610826948185-6d30d49c9b78?q=80&w=1080&fit=max",
+            "price": "$22,000",
+            "location": "Miami",
+            "originalPrice": "$38,000",
+            "yearsOfUse": 2,
+            "postedTime": "2 days ago",
+            "sellerName": "Sarah Clark",
+            "verified": false
+          }
+        ]
+      },
+      {
+        "id": 4,
+        "name": "Electric Cars",
+        "img": "https://img.freepik.com/free-photo/3d-electric-car-charging-station_23-2148972419.jpg?t=st=1718567361~exp=1718570961~hmac=9a74e918ace921648bd310ca4a8b42068a235ea795eeb89b4ad199c62af643d1&w=740",
+        "products": [
+          {
+            "id": 7,
+            "name": "Tesla Model S",
+            "img": "https://images.unsplash.com/photo-1601267737155-7a0a1c3fa1e2?q=80&w=1080&fit=max",
+            "price": "$75,000",
+            "location": "Seattle",
+            "originalPrice": "$90,000",
+            "yearsOfUse": 1,
+            "postedTime": "3 days ago",
+            "sellerName": "Elon Musk",
+            "verified": true
+          },
+          {
+            "id": 8,
+            "name": "Nissan Leaf",
+            "img": "https://images.unsplash.com/photo-1583436883885-1dfef8e4d07a?q=80&w=1080&fit=max",
+            "price": "$32,000",
+            "location": "San Diego",
+            "originalPrice": "$40,000",
+            "yearsOfUse": 2,
+            "postedTime": "1 week ago",
+            "sellerName": "Samantha Green",
+            "verified": false
+          }
+        ]
+      },
+      {
+        "id": 5,
+        "name": "Luxury Cars",
+        "img": "https://images.unsplash.com/photo-1519245659620-e859806a8d3b?q=80&w=1374&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "products": [
+          {
+            "id": 9,
+            "name": "Mercedes-Benz S-Class",
+            "img": "https://images.unsplash.com/photo-1588699893830-95d9089a3404?q=80&w=1080&fit=max",
+            "price": "$95,000",
+            "location": "Miami",
+            "originalPrice": "$120,000",
+            "yearsOfUse": 1,
+            "postedTime": "2 days ago",
+            "sellerName": "Alexander Schmidt",
+            "verified": true
+          },
+          {
+            "id": 10,
+            "name": "BMW 7 Series",
+            "img": "https://images.unsplash.com/photo-1564848441276-e4b93519f1f4?q=80&w=1080&fit=max",
+            "price": "$85,000",
+            "location": "Los Angeles",
+            "originalPrice": "$110,000",
+            "yearsOfUse": 2,
+            "postedTime": "4 days ago",
+            "sellerName": "Sophie White",
+            "verified": false
+          }
+        ]
+      }
+    
+  
+]

@@ -1,0 +1,86 @@
+[
+  {
+    "id": 1,
+    "name": "Tesla Model S",
+    "price": "$70,000",
+    "img": "https://img.freepik.com/free-photo/woman-talking-phone-car_23-2148257965.jpg?t=st=1718565318~exp=1718568918~hmac=597616399e39b4629f3a34382e38da53459cdaba7ec06a2e7e7d156ec5ceee25&w=740",
+    "location": "San Francisco, CA",
+    "originalPrice": "$80,000",
+    "yearsOfUse": 2,
+    "postedTime": "2 days ago",
+    "sellerName": "John Doe",
+    "verified": true
+  },
+  {
+    "id": 2,
+    "name": "BMW 3 Series",
+    "price": "$50,000",
+    "img": "https://images.unsplash.com/photo-1613027570801-5d2fe8f5e15d?q=80&w=1374&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    "location": "New York, NY",
+    "originalPrice": "$60,000",
+    "yearsOfUse": 3,
+    "postedTime": "5 days ago",
+    "sellerName": "Jane Smith",
+    "verified": false
+  },
+  {
+    "id": 3,
+    "name": "Audi A4",
+    "price": "$45,000",
+    "img": "https://images.unsplash.com/photo-1597007030739-6d2e7172ee5b?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTF8fEF1ZGklMjBBNHxlbnwwfHwwfHx8MA%3D%3D",
+    "location": "Los Angeles, CA",
+    "originalPrice": "$55,000",
+    "yearsOfUse": 4,
+    "postedTime": "1 week ago",
+    "sellerName": "Alice Johnson",
+    "verified": true
+  },
+  {
+    "id": 4,
+    "name": "Mercedes-Benz C-Class",
+    "price": "$60,000",
+    "img": "https://images.unsplash.com/photo-1669451724324-4d02cee26b36?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8TWVyY2VkZXMlMjBCZW56JTIwQyUyMENsYXNzfGVufDB8fDB8fHww",
+    "location": "Chicago, IL",
+    "originalPrice": "$70,000",
+    "yearsOfUse": 2,
+    "postedTime": "3 days ago",
+    "sellerName": "Bob Brown",
+    "verified": false
+  },
+  {
+    "id": 5,
+    "name": "Lexus RX",
+    "price": "$55,000",
+    "img": "https://images.unsplash.com/photo-1625074168785-53e4ef5b8e43?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTh8fExleHVzJTIwUlh8ZW58MHx8MHx8fDA%3D",
+    "location": "Houston, TX",
+    "originalPrice": "$65,000",
+    "yearsOfUse": 3,
+    "postedTime": "4 days ago",
+    "sellerName": "Charlie Davis",
+    "verified": true
+  },
+  {
+    "id": 6,
+    "name": "Ford Mustang",
+    "price": "$40,000",
+    "img": "https://images.unsplash.com/photo-1584345604476-8ec5e12e42dd?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OHx8Rm9yZCUyME11c3Rhbmd8ZW58MHx8MHx8fDA%3D",
+    "location": "Miami, FL",
+    "originalPrice": "$50,000",
+    "yearsOfUse": 5,
+    "postedTime": "2 weeks ago",
+    "sellerName": "Daniel Evans",
+    "verified": false
+  },
+  {
+    "id": 7,
+    "name": "Chevrolet Camaro",
+    "price": "$45,000",
+    "img": "https://images.unsplash.com/photo-1505343372103-a5df37706406?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    "location": "Phoenix, AZ",
+    "originalPrice": "$55,000",
+    "yearsOfUse": 3,
+    "postedTime": "6 days ago",
+    "sellerName": "Emma Wilson",
+    "verified": true
+  }
+]

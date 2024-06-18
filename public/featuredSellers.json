@@ -1,0 +1,28 @@
+[
+    {
+      "id": 1,
+      "name": "Auto Hub",
+      "rating": 4.8
+    },
+    {
+      "id": 2,
+      "name": "Car Bazaar",
+      "rating": 4.7
+    },
+    {
+      "id": 3,
+      "name": "Luxury Rides",
+      "rating": 4.9
+    },
+    {
+      "id": 4,
+      "name": "Budget Wheels",
+      "rating": 4.5
+    },
+    {
+      "id": 5,
+      "name": "Eco Motors",
+      "rating": 4.6
+    }
+  ]
+  

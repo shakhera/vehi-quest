@@ -1,0 +1,28 @@
+[
+    {
+      "id": 1,
+      "name": "John Doe",
+      "testimonial": "VehiQuest helped me find the perfect car. The process was seamless and the customer service was excellent."
+    },
+    {
+      "id": 2,
+      "name": "Jane Smith",
+      "testimonial": "I sold my car on VehiQuest and it was a great experience. I highly recommend this platform!"
+    },
+    {
+      "id": 3,
+      "name": "Alice Johnson",
+      "testimonial": "VehiQuest is a fantastic platform for buying and selling cars. The user interface is intuitive and the support team is very responsive."
+    },
+    {
+      "id": 4,
+      "name": "Michael Brown",
+      "testimonial": "I found a great deal on a used car through VehiQuest. The entire process was straightforward and hassle-free."
+    },
+    {
+      "id": 5,
+      "name": "Emily Davis",
+      "testimonial": "The variety of cars available on VehiQuest is impressive. I was able to find exactly what I was looking for at a great price."
+    }
+  ]
+  
