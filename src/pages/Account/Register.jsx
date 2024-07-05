@@ -5,6 +5,7 @@ import { useForm } from "react-hook-form";
 import { toast } from "react-toastify";
 import SocialLogin from "../../component/SocialLogin/SocialLogin";
 import useAxiosPublic from "../../hooks/useAxiosPublic";
+import Swal from "sweetalert2";
 
 const Register = () => {
   const { createUser, updateUserProfile } = useAuth();
@@ -13,6 +14,7 @@ const Register = () => {
 
   const {
     register,
+    reset,
     handleSubmit,
     formState: { errors },
   } = useForm();
@@ -24,20 +26,26 @@ const Register = () => {
         console.log("User registered successfully:", loggedUser);
         updateUserProfile(data.name)
           .then(() => {
-            // const userInfo = {
-            //   name: data.name,
-            // email: data.email,
-            // role: data.role || "user",
-            // };
-            // axiosPublic.post("/users", userInfo).then((res) => {
-            //   console.log("user info", res.data);
-            //   if (res.data.insertedId) {
-            //     toast.success("Login successful!");
-            //     navigate("/");
-            //   }
-            // });
-            toast.success("Login successful!");
-            navigate("/");
+            const userInfo = {
+              name: data.name,
+              email: data.email,
+              role: data.role || "user",
+            };
+            axiosPublic.post("/users", userInfo).then((res) => {
+              console.log("user info", res.data);
+              if (res.data.insertedId) {
+                console.log("user add to the db");
+                reset();
+                Swal.fire({
+                  position: "top-end",
+                  icon: "success",
+                  title: "User create successfully",
+                  showConfirmButton: false,
+                  timer: 1500,
+                });
+                navigate("/");
+              }
+            });
           })
           .catch((error) => {
             console.log(error);

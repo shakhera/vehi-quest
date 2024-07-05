@@ -10,9 +10,14 @@ const Dashboard = () => {
   const toggleDrawer = () => {
     setIsOpen(!isOpen);
   };
-
+  // const isAdmin = user?.role === "admin";
+  const isAdmin = true;
+  // const isSeller = user?.role === "seller";
+  const isSeller = true;
+  // const isBuyer = user?.role === "buyer";
+  const isBuyer = true;
   return (
-    <div className="flex">
+    <div className="flex ">
       {/* Drawer for Mobile */}
       <div
         className={`fixed inset-0 bg-gray-800 bg-opacity-50 z-40 ${
@@ -32,75 +37,86 @@ const Dashboard = () => {
           <FaTimes className="text-red-600 text-2xl"></FaTimes>
         </button>
         <nav className="">
-          <ul className="min-h-screen list-none p-0 m-0 space-y-2 shadow-2xl">
-            {/* {user?.role === "buyer" && ( */}
-            <li className="p-2 hover:bg-gray-200 rounded">
-              <Link
-                to="/dashboard/my-orders"
-                className="block pl-2 text-gray-800"
-              >
-                My Orders
-              </Link>
-            </li>
-            {/* )} */}
-            <div className="divider w-1/2"></div>
-            {/* {user?.role === "seller" && ( */}
-            <>
-              <li className="p-2 hover:bg-gray-200 rounded">
-                <Link
-                  to="/dashboard/add-product"
-                  className="block pl-2 text-gray-800"
-                >
-                  Add A Product
-                </Link>
-              </li>
-              <li className="p-2 hover:bg-gray-200 rounded">
-                <Link
-                  to="/dashboard/my-products"
-                  className="block pl-2 text-gray-800"
-                >
-                  My Products
-                </Link>
-              </li>
-              <li className="p-2 hover:bg-gray-200 rounded">
-                <Link
-                  to="/dashboard/my-buyers"
-                  className="block pl-2 text-gray-800"
-                >
-                  My Buyers
-                </Link>
-              </li>
-            </>
-            {/* )} */}
-            <div className="divider w-1/2"></div>
-            {/* {user?.role === "admin" && ( */}
-            <>
-              <li className="p-2 hover:bg-gray-200 rounded">
-                <Link
-                  to="/dashboard/all-sellers"
-                  className="block pl-2 text-gray-800"
-                >
-                  All Sellers
-                </Link>
-              </li>
-              <li className="p-2 hover:bg-gray-200 rounded">
-                <Link
-                  to="/dashboard/all-buyers"
-                  className="block pl-2 text-gray-800"
-                >
-                  All Buyers
-                </Link>
-              </li>
-              <li className="p-2 hover:bg-gray-200 rounded">
-                <Link
-                  to="/dashboard/reported-items"
-                  className="block pl-2 text-gray-800"
-                >
-                  Reported Items
-                </Link>
-              </li>
-            </>
-            {/* )} */}
+          <ul className="min-h-screen list-none p-0  md:pt-20 m-0 space-y-2 shadow-2xl">
+            {isBuyer && (
+              <>
+                <li className="p-2 pr-10 hover:bg-gray-200 rounded">
+                  <Link
+                    to="/dashboard/my-orders"
+                    className="block pl-2 text-gray-800"
+                  >
+                    My Orders
+                  </Link>
+                </li>
+                <div className="divider w-2/3"></div>
+              </>
+            )}
+            {isSeller && (
+              <>
+                <li className="p-2 hover:bg-gray-200 rounded">
+                  <Link
+                    to="/dashboard/add-product"
+                    className="block pl-2 text-gray-800"
+                  >
+                    Add A Product
+                  </Link>
+                </li>
+                <li className="p-2 hover:bg-gray-200 rounded">
+                  <Link
+                    to="/dashboard/my-products"
+                    className="block pl-2 text-gray-800"
+                  >
+                    My Products
+                  </Link>
+                </li>
+                <li className="p-2 hover:bg-gray-200 rounded">
+                  <Link
+                    to="/dashboard/my-buyers"
+                    className="block pl-2 text-gray-800"
+                  >
+                    My Buyers
+                  </Link>
+                </li>
+                <div className="divider w-2/3"></div>
+              </>
+            )}
+            {isAdmin && (
+              <>
+                <li className="p-2 hover:bg-gray-200 rounded">
+                  <Link
+                    to="/dashboard/all-users"
+                    className="block pl-2 text-gray-800"
+                  >
+                    Manage Users
+                  </Link>
+                </li>
+                <li className="p-2 hover:bg-gray-200 rounded">
+                  <Link
+                    to="/dashboard/all-sellers"
+                    className="block pl-2 text-gray-800"
+                  >
+                    All Sellers
+                  </Link>
+                </li>
+
+                <li className="p-2 hover:bg-gray-200 rounded">
+                  <Link
+                    to="/dashboard/all-buyers"
+                    className="block pl-2 text-gray-800"
+                  >
+                    All Buyers
+                  </Link>
+                </li>
+                <li className="p-2 hover:bg-gray-200 rounded">
+                  <Link
+                    to="/dashboard/reported-items"
+                    className="block pl-2 text-gray-800"
+                  >
+                    Reported Items
+                  </Link>
+                </li>
+              </>
+            )}
           </ul>
         </nav>
       </div>

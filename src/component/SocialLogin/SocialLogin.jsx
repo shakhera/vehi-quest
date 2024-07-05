@@ -1,7 +1,34 @@
 import React from "react";
 import { FaFacebook, FaGithub, FaGoogle } from "react-icons/fa";
+import useAuth from "../../hooks/useAuth";
+import useAxiosPublic from "../../hooks/useAxiosPublic";
+import { useNavigate } from "react-router-dom";
 
 const SocialLogin = () => {
+  const { googleLogin } = useAuth();
+  const axiosPublic = useAxiosPublic();
+  const navigate = useNavigate();
+
+  const handleLoginWithGoogle = () => {
+    googleLogin()
+      .then((result) => {
+        const loggedUser = result.user;
+        console.log("user login with google", loggedUser);
+        const userInfo = {
+          email: result.user?.email,
+          name: result.user?.displayName,
+          role: 'buyer',
+        };
+        axiosPublic.post("/users", userInfo).then((res) => {
+          console.log(res.data);
+          navigate("/");
+        });
+
+      })
+      .catch((error) => {
+        console.log("error for google login", error.message);
+      });
+  };
   return (
     <div>
       <div className="flex items-center pt-4 space-x-2">
@@ -12,6 +39,7 @@ const SocialLogin = () => {
       {/* Social icons */}
       <div className="flex justify-center space-x-4">
         <button
+          onClick={handleLoginWithGoogle}
           aria-label="Register with Google"
           className="p-3 rounded-full hover:bg-gray-200"
         >
