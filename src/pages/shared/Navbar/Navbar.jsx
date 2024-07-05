@@ -1,9 +1,12 @@
 import React, { useEffect, useRef, useState } from "react";
 import { Link } from "react-router-dom";
+import useAuth from "../../../hooks/useAuth";
 
 const Navbar = () => {
   const [dropDownState, setDropDownState] = useState(false);
+  const [scrollNav, setScrollNav] = useState(false);
   const dropDownMenuRef = useRef();
+  const { user, logOut } = useAuth();
 
   useEffect(() => {
     const closeDropDown = (e) => {
@@ -11,52 +14,91 @@ const Navbar = () => {
         setDropDownState(false);
       }
     };
-
     document.addEventListener("mousedown", closeDropDown);
-
     return () => {
       document.removeEventListener("mousedown", closeDropDown);
     };
   }, []);
+
+  const changeBg = () => {
+    if (window.scrollY >= 400) {
+      setScrollNav(true);
+    } else {
+      setScrollNav(false);
+    }
+  };
+  useEffect(() => {
+    window.addEventListener("scroll", changeBg);
+    return () => {
+      window.removeEventListener("scroll", changeBg);
+    };
+  }, []);
+
+  const handleLogout = () => {
+    logOut()
+      .then(() => {})
+      .catch(() => {});
+  };
   return (
     <div>
-      <nav className="flex items-center justify-between  px-4 py-2 shadow-lg ">
+      <nav
+        className={`flex fixed z-10 w-full text-gray-200 items-center justify-between  px-4 py-2 shadow-lg ${
+          scrollNav ? "bg-neutral" : "bg-opacity-5 text-sky-500 font-extrabold"
+        }`}
+      >
         <div className="scale-100 cursor-pointer rounded-2xl px-3 py-2 text-xl font-semibold transition-all duration-200 hover:scale-110">
           <h2>VehiQuest</h2>
         </div>
-        <ul className="hidden items-center justify-between gap-10 md:flex">
-          <li className="group flex  cursor-pointer flex-col">
+        <ul className="hidden items-center justify-between gap-2 md:flex">
+          <li className="group flex mr-10 cursor-pointer flex-col">
             <Link to="/">Home</Link>
-            <span className="mt-[2px] h-[3px] w-[0px] rounded-full bg-sky-500 transition-all duration-300 group-hover:w-full"></span>
+            <span className="mt-1 h-1 w-0 rounded-full bg-sky-500 transition-all duration-300 group-hover:w-full"></span>
           </li>
-          <li className="group flex  cursor-pointer flex-col">
-            Services
-            <span className="mt-[2px] h-[3px]  w-[0px] rounded-full bg-sky-500 transition-all duration-300 group-hover:w-full"></span>
+          {/* <li className="group flex mr-10  cursor-pointer flex-col">
+            <Link to="/category">Services</Link>
+            <span className="mt-1 h-1 w-0  rounded-full bg-sky-500 transition-all duration-300 group-hover:w-full"></span>
+          </li> */}
+          <li className="group flex mr-10 cursor-pointer flex-col">
+            <Link to="/blog">Blog</Link>
+            <span className="mt-1 h-1 w-0  rounded-full bg-sky-500 transition-all duration-300 group-hover:w-full"></span>
           </li>
-          <li className="group flex  cursor-pointer flex-col">
-            About
-            <span className="mt-[2px] h-[3px]  w-[0px] rounded-full bg-sky-500 transition-all duration-300 group-hover:w-full"></span>
-          </li>
-          <li className="group flex  cursor-pointer flex-col">
+          <li className="group flex mr-10  cursor-pointer flex-col">
             Contact
-            <span className="mt-[2px] h-[3px]  w-[0px] rounded-full bg-sky-500 transition-all duration-300 group-hover:w-full"></span>
+            <span className="mt-1 h-1 w-0  rounded-full bg-sky-500 transition-all duration-300 group-hover:w-full"></span>
           </li>
-          <li className="group flex  cursor-pointer flex-col">
-            Log In
-            <span className="mt-[2px] h-[3px]  w-[0px] rounded-full bg-sky-500 transition-all duration-300 group-hover:w-full"></span>
-          </li>
-          <li className="group flex  cursor-pointer flex-col">
-            Register
-            <span className="mt-[2px] h-[3px]  w-[0px] rounded-full bg-sky-500 transition-all duration-300 group-hover:w-full"></span>
-          </li>
-          <div className="flex items-center justify-between gap-5">
-            <button className="rounded-full bg-sky-600 px-6 py-2 text-white transition-all duration-300 hover:scale-90">
-              Log In
-            </button>
-            <button className="rounded-full bg-sky-600 px-6 py-2 text-white transition-all duration-300 hover:scale-90">
-              Register
-            </button>
-          </div>
+          {user && (
+            <li className="group flex mr-10  cursor-pointer flex-col">
+              <Link to="/dashboard">Dashboard</Link>
+              <span className="mt-1 h-1 w-0  rounded-full bg-sky-500 transition-all duration-300 group-hover:w-full"></span>
+            </li>
+          )}
+          {user ? (
+            <>
+              <button
+                onClick={handleLogout}
+                className="rounded-full bg-red-600 px-6 py-2 text-white transition-all duration-300 hover:scale-90"
+              >
+                Log Out
+              </button>
+            </>
+          ) : (
+            <>
+              <li className="group flex cursor-pointer flex-col">
+                <Link to="/login">
+                  <button className="rounded-full bg-sky-600 px-6 py-2 text-white transition-all duration-300 hover:scale-90">
+                    Log In
+                  </button>
+                </Link>
+              </li>
+              <li className="group flex cursor-pointer flex-col">
+                <Link to="/register">
+                  <button className="rounded-full bg-sky-600 px-6 py-2 text-white transition-all duration-300 hover:scale-90">
+                    Register
+                  </button>
+                </Link>
+              </li>
+            </>
+          )}
         </ul>
         <div
           ref={dropDownMenuRef}
@@ -75,7 +117,6 @@ const Navbar = () => {
             strokeLinejoin="round"
             className="cursor-pointer"
           >
-            {" "}
             <line x1="4" x2="20" y1="12" y2="12" />{" "}
             <line x1="4" x2="20" y1="6" y2="6" />
             <line x1="4" x2="20" y1="18" y2="18" />{" "}

@@ -4,13 +4,15 @@ import AdvertisedItems from "../AdvertisedItems/AdvertisedItems";
 import Categories from "../Categories/Categories";
 import Testimonials from "../Testimonials/Testimonials";
 import FeaturedSellers from "../FeaturedSellers/FeaturedSellers";
+import AdvertisedProduct from "../AdvertisedProduct/AdvertisedProduct";
 
 const Home = () => {
   return (
     <div>
       <Banner></Banner>
-      <AdvertisedItems></AdvertisedItems>
+      {/* <AdvertisedItems></AdvertisedItems> */}
       <Categories></Categories>
+      <AdvertisedProduct></AdvertisedProduct>
       <Testimonials></Testimonials>
       <FeaturedSellers></FeaturedSellers>
     </div>
