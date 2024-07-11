@@ -4,11 +4,13 @@ import useAuth from "../../../../hooks/useAuth";
 import useAxiosPublic from "../../../../hooks/useAxiosPublic";
 import { toast } from "react-toastify";
 import { useNavigate } from "react-router-dom";
+import useAxiosSecure from "../../../../hooks/useAxiosSecure";
 
 const AddProduct = () => {
   const [condition, setCondition] = useState("excellent");
   const { user } = useAuth();
   const axiosPublic = useAxiosPublic();
+  const axiosSecure = useAxiosSecure();
   const navigate = useNavigate();
   const {
     register,

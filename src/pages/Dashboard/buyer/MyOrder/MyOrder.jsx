@@ -30,9 +30,6 @@ const MyOrder = () => {
                   Title
                 </th>
                 <th className="py-3 px-6 bg-sky-500 text-white font-semibold uppercase tracking-wider">
-                  email
-                </th>
-                <th className="py-3 px-6 bg-sky-500 text-white font-semibold uppercase tracking-wider">
                   Price
                 </th>
                 <th className="py-3 px-6 bg-sky-500 text-white font-semibold uppercase tracking-wider">
@@ -52,9 +49,6 @@ const MyOrder = () => {
                 >
                   <td className="py-4 px-6 border-t border-gray-200">
                     {order.itemName}
-                  </td>
-                  <td className="py-4 px-6 border-t border-gray-200">
-                    {order.email}
                   </td>
                   <td className="py-4 px-6 border-t border-gray-200">
                     {order.price}

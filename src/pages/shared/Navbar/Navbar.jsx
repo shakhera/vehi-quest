@@ -68,7 +68,7 @@ const Navbar = () => {
           </li>
           {user && (
             <li className="group flex mr-10  cursor-pointer flex-col">
-              <Link to="/dashboard">Dashboard</Link>
+              <Link to="/dashboard/dashboardHome">Dashboard</Link>
               <span className="mt-1 h-1 w-0  rounded-full bg-sky-500 transition-all duration-300 group-hover:w-full"></span>
             </li>
           )}

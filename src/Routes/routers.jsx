@@ -17,6 +17,9 @@ import ManageUsers from "../pages/Dashboard/Admin/ManageUsers/ManageUsers";
 import MyOrder from "../pages/Dashboard/buyer/MyOrder/MyOrder";
 import PaymentPage from "../pages/Dashboard/buyer/PaymentPage/PaymentPage";
 import ErrorPage from "../Layout/ErrorPage";
+import DashboardHome from "../pages/Dashboard/DashboardHome/DashboardHome";
+import MyBuyer from "../pages/Dashboard/Seller/MyBuyer/MyBuyer";
+import ReportedItems from "../pages/Dashboard/Admin/ReportedItems/ReportedItems";
 const routers = createBrowserRouter([
   {
     path: "/",
@@ -62,6 +65,10 @@ const routers = createBrowserRouter([
     ),
     children: [
       {
+        path: "dashboardHome",
+        element: <DashboardHome></DashboardHome>,
+      },
+      {
         path: "add-product",
         element: <AddProduct></AddProduct>,
       },
@@ -82,8 +89,16 @@ const routers = createBrowserRouter([
         element: <AllBuyers></AllBuyers>,
       },
       {
+        path: "my-buyers",
+        element: <MyBuyer></MyBuyer>,
+      },
+      {
         path: "my-orders",
         element: <MyOrder></MyOrder>,
+      },
+      {
+        path: "reported-items",
+        element: <ReportedItems></ReportedItems>,
       },
       {
         path: "payment/:id",
