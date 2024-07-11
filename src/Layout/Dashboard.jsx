@@ -2,6 +2,9 @@ import React, { useState } from "react";
 import { Outlet, Link } from "react-router-dom";
 import useAuth from "../hooks/useAuth";
 import { FaBars, FaTimes } from "react-icons/fa";
+import useAdmin from "../hooks/useAdmin";
+import useSeller from "../hooks/useSeller";
+import useBuyer from "../hooks/useBuyer";
 
 const Dashboard = () => {
   const { user } = useAuth();
@@ -10,12 +13,17 @@ const Dashboard = () => {
   const toggleDrawer = () => {
     setIsOpen(!isOpen);
   };
-  // const isAdmin = user?.role === "admin";
-  const isAdmin = true;
-  // const isSeller = user?.role === "seller";
-  const isSeller = true;
-  // const isBuyer = user?.role === "buyer";
-  const isBuyer = true;
+  const [isAdmin, isAdminLoading] = useAdmin();
+  const [isSeller, refetchSeller, isSellerLoading] = useSeller();
+  const [isBuyer, refetchBuyer, isBuyerLoading] = useBuyer();
+  // const isAdmin = true;
+  // const isSeller = true;
+  // const isBuyer = true;
+
+  // if (isAdminLoading) {
+  //   return <div>Loading...</div>;
+  // }
+
   return (
     <div className="flex ">
       {/* Drawer for Mobile */}
@@ -38,50 +46,13 @@ const Dashboard = () => {
         </button>
         <nav className="">
           <ul className="min-h-screen list-none p-0  md:pt-20 m-0 space-y-2 shadow-2xl">
-            {isBuyer && (
-              <>
-                <li className="p-2 pr-10 hover:bg-gray-200 rounded">
-                  <Link
-                    to="/dashboard/my-orders"
-                    className="block pl-2 text-gray-800"
-                  >
-                    My Orders
-                  </Link>
-                </li>
-                <div className="divider w-2/3"></div>
-              </>
-            )}
-            {isSeller && (
+            {isAdmin ? (
               <>
                 <li className="p-2 hover:bg-gray-200 rounded">
-                  <Link
-                    to="/dashboard/add-product"
-                    className="block pl-2 text-gray-800"
-                  >
-                    Add A Product
+                  <Link to="/" className="block pl-2 text-gray-800">
+                    Home
                   </Link>
                 </li>
-                <li className="p-2 hover:bg-gray-200 rounded">
-                  <Link
-                    to="/dashboard/my-products"
-                    className="block pl-2 text-gray-800"
-                  >
-                    My Products
-                  </Link>
-                </li>
-                <li className="p-2 hover:bg-gray-200 rounded">
-                  <Link
-                    to="/dashboard/my-buyers"
-                    className="block pl-2 text-gray-800"
-                  >
-                    My Buyers
-                  </Link>
-                </li>
-                <div className="divider w-2/3"></div>
-              </>
-            )}
-            {isAdmin && (
-              <>
                 <li className="p-2 hover:bg-gray-200 rounded">
                   <Link
                     to="/dashboard/all-users"
@@ -115,6 +86,60 @@ const Dashboard = () => {
                     Reported Items
                   </Link>
                 </li>
+              </>
+            ) : (
+              <>
+                {isBuyer && (
+                  <>
+                    <li className="p-2 hover:bg-gray-200 rounded">
+                      <Link to="/" className="block pl-2 text-gray-800">
+                        Home
+                      </Link>
+                    </li>
+                    <li className="p-2 pr-10 hover:bg-gray-200 rounded">
+                      <Link
+                        to="/dashboard/my-orders"
+                        className="block pl-2 text-gray-800"
+                      >
+                        My Orders
+                      </Link>
+                    </li>
+                    {/* <div className="divider w-2/3"></div> */}
+                  </>
+                )}
+                {isSeller && (
+                  <>
+                    <li className="p-2 hover:bg-gray-200 rounded">
+                      <Link to="/" className="block pl-2 text-gray-800">
+                        Home
+                      </Link>
+                    </li>
+                    <li className="p-2 hover:bg-gray-200 rounded">
+                      <Link
+                        to="/dashboard/add-product"
+                        className="block pl-2 text-gray-800"
+                      >
+                        Add A Product
+                      </Link>
+                    </li>
+                    <li className="p-2 hover:bg-gray-200 rounded">
+                      <Link
+                        to="/dashboard/my-products"
+                        className="block pl-2 text-gray-800"
+                      >
+                        My Products
+                      </Link>
+                    </li>
+                    <li className="p-2 hover:bg-gray-200 rounded">
+                      <Link
+                        to="/dashboard/my-buyers"
+                        className="block pl-2 text-gray-800"
+                      >
+                        My Buyers
+                      </Link>
+                    </li>
+                  </>
+                )}
               </>
             )}
           </ul>

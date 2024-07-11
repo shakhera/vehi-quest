@@ -14,6 +14,9 @@ import Blogs from "../pages/Blogs/Blogs";
 import AllSellers from "../pages/Dashboard/Admin/AllSellers/AllSellers";
 import AllBuyers from "../pages/Dashboard/Admin/AllBuyers/AllBuyers";
 import ManageUsers from "../pages/Dashboard/Admin/ManageUsers/ManageUsers";
+import MyOrder from "../pages/Dashboard/buyer/MyOrder/MyOrder";
+import PaymentPage from "../pages/Dashboard/buyer/PaymentPage/PaymentPage";
+import ErrorPage from "../Layout/ErrorPage";
 const routers = createBrowserRouter([
   {
     path: "/",
@@ -78,7 +81,20 @@ const routers = createBrowserRouter([
         path: "all-buyers",
         element: <AllBuyers></AllBuyers>,
       },
+      {
+        path: "my-orders",
+        element: <MyOrder></MyOrder>,
+      },
+      {
+        path: "payment/:id",
+        element: <PaymentPage></PaymentPage>,
+      },
     ],
+  },
+  {
+    path: "*",
+    element: <ErrorPage></ErrorPage>,
+    errorElement: <ErrorPage></ErrorPage>,
   },
 ]);
 
