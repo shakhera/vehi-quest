@@ -12,11 +12,11 @@ const MyOrder = () => {
     queryKey: ["bookings", user?.email],
     queryFn: async () => {
       const res = await axiosSecure.get(`/bookings?email=${user.email}`);
-      console.log(res.data);
+      // console.log(res.data);
       return res.data;
     },
   });
-  console.log(bookings);
+  // console.log(bookings);
 
   return (
     <div>
@@ -54,6 +54,25 @@ const MyOrder = () => {
                     {order.price}
                   </td>
                   <td className="py-4 px-6 border-t border-gray-200">
+                    {/* {order.price && (
+                      <Link to={`/dashboard/payment/${order._id}`}>
+                        <button
+                          className="bg-sky-500 hover:bg-sky-600 text-white py-2 px-4 rounded-lg transition duration-200"
+                          disabled
+                        >
+                          Pay
+                        </button>
+                      </Link>
+                    )}
+                    {order.price && order.paid && (
+                      <button
+                        className="bg-green-500 text-white py-2 px-4 rounded-lg cursor-not-allowed"
+                        disabled
+                      >
+                        Paid
+                      </button>
+                    )} */}
+
                     {order.status === "paid" ? (
                       <button
                         className="bg-green-500 text-white py-2 px-4 rounded-lg cursor-not-allowed"

@@ -4,7 +4,7 @@ import { useNavigate } from "react-router-dom";
 import useAuth from "./useAuth";
 
 const axiosSecure = axios.create({
-  baseURL: "http://localhost:5000",
+  baseURL: "https://vehi-quest-server.vercel.app",
 });
 const useAxiosSecure = () => {
   const navigate = useNavigate();
@@ -13,7 +13,7 @@ const useAxiosSecure = () => {
   axiosSecure.interceptors.request.use(
     function (config) {
       const token = localStorage.getItem("access-token");
-      console.log("request stopped by interceptor", token);
+      // console.log("request stopped by interceptor", token);
       config.headers.authorization = `Bearer ${token}`;
       return config;
     },

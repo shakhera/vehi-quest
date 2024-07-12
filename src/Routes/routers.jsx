@@ -103,6 +103,8 @@ const routers = createBrowserRouter([
       {
         path: "payment/:id",
         element: <PaymentPage></PaymentPage>,
+        loader: ({ params }) =>
+          fetch(`https://vehi-quest-server.vercel.app/bookings/${params.id}`),
       },
     ],
   },
