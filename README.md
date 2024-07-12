@@ -17,9 +17,8 @@ VehiQuest is a web application that allows users to browse and purchase second-h
 ### Backend
 - Node.js & Express: For creating the server and API endpoints.
 - MongoDB: For storing vehicle listings, user data, and other application data.
-Stripe: For payment processing.
-Getting Started
-Prerequisites
-Node.js
-MongoDB
-Stripe Account
+- Stripe: For payment processing.
+### Prerequisites
+- Node.js
+- MongoDB
+- Stripe Account
